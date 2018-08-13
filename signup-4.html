@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="./assets/img/apple-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">
+    <title>
+       4 signup
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!--fancyBox (lightbox) CSS Files-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.fancybox.min.css">
+    <!--reCAPTCHA-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!--Standard CSS-->
+    <link rel="stylesheet" href="assets/css/material-kit.css">
+    <!-- Documentation extras -->
+    <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <link href="./assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+    
+    
+    
+    <style>
+        p {font-size: 16px;}
+        a {color: #7C4DFF;}
+        /* Gradient color1 - color2 - color1 */
+        .top-link {color: #fff;}
+        .day30 ul {
+                list-style: none;
+            }
+
+        .day30 ul li:before {
+              content: '✓';
+            }
+        .top-link:hover {color: #388E3C;}
+        .btn-round-try-outline {background-color: #fff; border: 1px solid #222; color: #222;}
+        .btn-round-try-outline:hover {background-color: #388E3C; border: 1px solid #388E3C; color: #fff;}
+        .btn-round-try-outline-blue {background-color: #388E3C; border: 1px solid #fff; color: #fff;}
+        .btn-round-try-outline-blue:hover {background-color: #fff; border: 1px solid #fff; color: #7C4DFF;}
+        .btn-green {background-color: #7C4DFF;border: 1px solid #7C4DFF;  color: #fff;}
+        .btn-green:hover {background-color: #fff; border: 1px solid #7C4DFF;  color: #000;}
+        .bg-teal {background-color: #388E3C;}
+        .card-body {height: 100%;}
+        .card-body.back-image img {display: block; margin-left: auto; margin-right: auto; width: 70%;}
+        .card-body.front-image img {display: block; margin-left: auto; margin-right: auto; width: 70%;}
+        .nav-pills-rose .active {background-color: #7C4DFF;}
+        .btn.btn-just-icon .fa {color: #fff}
+        .btn.btn-rose {background-color: #17194D; color: #fff;}
+        
+        .card {-webkit-box-shadow: none; box-shadow: none;}
+        hr.style-one {
+            border: 0;
+            height: 2px;
+            width: 80%;
+            background: #333;
+            background-image: linear-gradient(to right, #fff, #388E3C, #fff);
+            }
+        
+/*Accordion*/
+        
+.accordion-half {
+  float: left;
+  width: 100%;
+  padding: 0 1em;
+    margin-bottom: 50px;
+}
+/* Acordeon styles */
+.accordion-tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.accordion input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.accordion label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  background: #388E3C;
+    color: #fff;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+}
+.accordion-blue label {
+  background: #2980b9;
+}
+.accordion-tab-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #555;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+.accordion-blue .accordion-tab-content {
+  background: #3498db;
+}
+.accordion-tab-content p {
+  margin: 1em;
+}
+/* :checked */
+.accordion input:checked ~ .accordion-tab-content {
+  max-height: 22em;
+}
+/* Icon */
+.accordion label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+input[type=checkbox] + label::after {
+  content: "+";
+}
+input[type=radio] + label::after {
+  content: "\25BC";
+}
+input[type=checkbox]:checked + label::after {
+  transform: rotate(225deg);
+}
+input[type=radio]:checked + label::after {
+  transform: rotateX(180deg);
+}
+
+        
+/**
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+        
+/** LIGHTBOX MARKUP **/
+
+
+        /*
+
+   Styles for animated modal
+   =========================
+
+*/
+
+/* Start state */
+.animated-modal {
+  width: 450px;
+  border-radius: 4px;
+  overflow: hidden;
+  
+  transform: translateY(-50px);
+  transition: all .7s;
+}
+
+.animated-modal h2,
+.animated-modal p {
+  transform: translateY(-50px);
+  opacity: 0;
+  
+  transition-property: transform, opacity;
+  transition-duration: .4s;
+}
+
+/* Final state */
+.fancybox-slide--current .animated-modal,
+.fancybox-slide--current .animated-modal h2,
+.fancybox-slide--current .animated-modal p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Reveal content with different delays */
+.fancybox-slide--current .animated-modal h2 {
+  transition-delay: .1s;
+}
+
+.fancybox-slide--current .animated-modal p {
+  transition-delay: .3s;
+}
+        
+    </style>
+    
+</head>
+
+<body class="login-page">
+    <div class="" style="background-image: url('assets/img/signup.jpg'); background-size: cover; background-position: top center;">
+    <nav class="navbar fixed-top navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./index.html"><img src="assets/img/wp.svg" alt="WorshipPlanning.com"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="material-icons">people</i> OUR STORY
+                        </a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="material-icons">list</i> BLOG
+                        </a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="#pricing" class="nav-link">
+                            <i class="material-icons">attach_money</i> PRICING
+                        </a>
+                    </li>
+                    <li>
+                    <button class="btn btn-primary btn-round"  data-fancybox data-animation-duration="700" data-src="#30dayfree" href="javascript:;" style="background-color: #388E3C">
+                                                Start Your FREE 30-day Trial
+                    </button>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li class="button-container nav-item iframe-extern">
+                        <a class="btn btn-rose btn-round btn-block btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;"> 
+                            <i class="material-icons">fingerprint</i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<!-- Lightboxes -->
+    <div style="display: none;" id="animatedModal" class="animated-modal">
+        <br>
+            <div class="row">
+                    <div class="card" style="border-radius: 0px;border: 1px solid #fff; box-shadow: none;">
+                        <form class="form" method="" action="">
+                            <div class="card-header card-header-primary text-center">
+                                <h4 class="card-title">Login</h4>
+                            </div>
+                            <br>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Username or Email Address">
+                                </div>
+                                <!--<div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Email...">
+                                </div>-->
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password...">
+                                </div>
+                                <!-- If you want to add a checkbox to this form, uncomment this code
+
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="optionsCheckboxes" checked>
+										Subscribe to newsletter
+									</label>
+								</div> -->
+                            </div>
+                            <div class="footer text-center">
+                                <a href="#" target="_blank" class="btn btn-rose btn-round"> <i class="material-icons">fingerprint</i> Login</a>
+                                <a href="/login/lostPassword.cfm" class="btn btn-primary btn-link btn-wd btn-lg">Reset Password</a>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+    </div>
+        
+    
+<div class="page-header header-filter" style="background-image: url(&apos;../assets/img/bg7.jpg&apos;); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6 ml-auto mr-auto">
+                    <br>
+                    <div class="accordion">
+                    <div class="accordion-half">
+                        <div class="accordion-tab">
+                          <input id="accordion-tab-one" type="checkbox" name="tabs">
+                          <label for="accordion-tab-one">What's included in the trial?</label>
+                          <div class="accordion-tab-content">
+                              <p>
+                            Your FREE 30-day Trial includes:
+                            <ul>
+                                  <li><b>UNLIMITED</b> helpers & volunteer accounts</li>
+                                  <li><b>UNLIMITED</b> teams</li>
+                                  <li><b>UNLIMITED</b> services</li>
+                                  <li><b>UNLIMITED</b> for file attachments*</li>
+                                  <li>NO commitment or obligations</li>
+                                  <li>NO credit card required</li>
+                                </ul>
+                    <p><span style="font-size: 18px; color: #388E3C; font-weight: 900;">Questions?</span><br>Give us a call <span style="color: #7C4DFF">877.399.3342</span> (or +1.704.444.0619 outside the US)</p>
+                    <p style="font-size: 10px;">*Paid accounts have unlimited file attachment space.</p>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                        </div>
+                    <br><br><br>
+                    <div class="card card-signup">
+                        <form class="form" method="" action="">
+                            <div class="card-header card-header-primary text-center">
+                                <h4 class="card-title">Sign Up</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="First and Last Name">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="referral" style="color: #212529; float: right; padding-bottom: 13px; margin-top: 4px;">How you found us:</label>
+                                    
+                                        <label for="referral"  style="color: #212529; float: right;">Intended usage:</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <select name="referralID" id="referralID">
+                                                        <option value="">&nbsp;I found you via&hellip; </option>
+                                                            <option  value="2">All About Worship Podcast</option>
+                                                            <option  value="3">Another church</option>
+                                                            <option  value="4">Bing ad</option>
+                                                            <option  value="45">Capterra Listing</option>
+                                                            <option  value="43">CCB Webinar</option>
+                                                            <option  value="49">ChurchLeaders.com</option>
+                                                            <option  value="18">Facebook Ad</option>
+                                                            <option  value="6">Google ad</option>
+                                                            <option  value="7">Postcard in the mail</option>
+                                                            <option  value="47">Rockin With The Cross</option>
+                                                            <option  value="5">Search engine result</option>
+                                                            <option  value="8">Twitter</option>
+                                                            <option  value="9">Worship Leader Bootcamp</option>
+                                                            <option  value="11">Worship Leader Magazine</option>
+                                                            <option  value="56">YouTube Channel</option>
+                                                            <option  value="12">Other</option>
+                                                    </select>
+                                        
+                                                    <select name="plannedUsage" id="plannedUsage" style="margin-top: 10px;">
+                                                        <option value="">&nbsp;I hope to improve&hellip;</option>
+                                                        <option value="worship flow">worship flow planning</option>
+                                                        <option value="people scheduling">people/team scheduling</option>
+                                                        <option value="both">worship flow & people scheduling</option>
+                                                        <option value="other">something else</option>
+                                                    </select>
+                                    </div>
+
+                                   </div>  
+
+                                                    
+
+                                
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" checked>
+                                                Skip the free trial. I'm ready for a paid account!
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--<div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_open</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Confirm Password">
+                                </div>-->
+
+								
+                            
+                            <div class="footer text-center">
+                                <a href="#" target="_blank" class="btn btn-rose btn-round"> <i class="material-icons">account_circle</i> Signup</a>
+                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Or Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <button class="btn btn-just-icon btn-round btn-facebook">
+                                <i class="fa fa-facebook"> </i>
+                            <div class="ripple-container"></div>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <button class="btn btn-just-icon btn-round btn-twitter">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <button class="btn btn-just-icon btn-round btn-google">
+                                <i class="fa fa-google"> </i>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/img/better_business_bureaua.png" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>, Worship Planning
+        </div>
+    </footer>
+    </div>
+        </div>
+
+    <!--  End Modal -->
+
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/bootstrap-material-design.js"></script>
+    <!--  Google Maps Plugin  -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="./assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+    <script src="./assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="./assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--	Plugin for Small Gallery in Product Page -->
+    <script src="./assets/js/plugins/jquery.flexisel.js"></script>
+    <!-- Plugins for presentation and navigation  -->
+    <script src="./assets/assets-for-demo/js/modernizr.js"></script>
+    <script src="./assets/assets-for-demo/js/vertical-nav.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="./assets/js/material-kit.js?v=2.0.3"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            materialKit.initSliders();
+        });
+    </script>
+
+            <!-- Smooth scroll-->
+            <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            </script>
+
+            <!--fancyBox (lightbox) CSS Files-->
+            <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script src="assets/js/jquery.fancybox.min.js"></script>
+            
+</body>
+
+</html>
+
+
+
+
+
+
